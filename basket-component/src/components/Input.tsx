@@ -18,7 +18,6 @@ const BasketInput = (props: BasketInputProps) => {
       inputRef.current.value = props.value;
     }
   })
-
   return (
     <form
       onSubmit={(e) => {
