@@ -1,12 +1,25 @@
 import './App.css';
 
-const App = () => {
+// The remote component provided by federation_provider
+
+import List  from "federation_provider/List";
+import Input from "federation_provider/Input";
+import { useState } from 'react';
+
+function App() {
+  const [todos, setTodos] = useState<string[]>([]);
+  const addNewTodo = (newTodo: string) => {
+    setTodos((prev) => [...prev, newTodo]);
+
+  };
+
   return (
-    <div className="content">
-      <h1>Rsbuild with React</h1>
-      <p>Start building amazing things with Rsbuild.</p>
-    </div>
+    <>
+      <Input value={'New todo'} onSubmit={addNewTodo} />
+      <List items={todos} />
+    </>
   );
-};
+}
+
 
 export default App;
