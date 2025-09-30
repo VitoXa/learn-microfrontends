@@ -16,7 +16,7 @@ export default defineConfig({
           name: 'federation_consumer',
           dts: false,
           remotes: {
-            'federation_provider': 'provider_app@http://localhost:3001/mf-manifest.json',
+            'federation_provider': 'federation_provider@http://localhost:3001/mf-manifest.json',
           },
           shared: ['react', 'react-dom'],
         }),
