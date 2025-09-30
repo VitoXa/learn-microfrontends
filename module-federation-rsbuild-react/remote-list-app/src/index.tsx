@@ -1,13 +1,3 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
-
-const rootEl = document.getElementById('root');
-if (rootEl) {
-  const root = ReactDOM.createRoot(rootEl);
-  root.render(
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>,
-  );
-}
+// Entry point for the host application (it is critical to have bootstrap.tsx as a separate file and import it here)
+// TODO get why it is critical (here is a git issue about it:https://github.com/module-federation/core/discussions/1959)
+import('./bootstrap');

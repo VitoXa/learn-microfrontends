@@ -8,22 +8,15 @@ export default defineConfig({
   html: {
     title: 'Consumer App',
   },
-
-  tools: {
-    rspack: {
-      plugins: [
-        new ModuleFederationPlugin({
-          name: 'federation_consumer',
-          dts: false,
-          remotes: {
-            'federation_provider': 'federation_provider@http://localhost:3001/mf-manifest.json',
-          },
-          shared: ['react', 'react-dom'],
-        }),
-      ],
+  plugins: [pluginReact(),
+  pluginModuleFederation({
+    name: 'federation_consumer',
+    remotes: {
+      federation_provider: 'federation_provider@http://localhost:3001/mf-manifest.json',
     },
-  },
-  plugins: [pluginReact(),],
+    shared: ['react', 'react-dom']
+  }),
+  ],
   server: {
     port: 2000,
   },
