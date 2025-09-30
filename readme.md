@@ -6,3 +6,4 @@ Here is a collection of approaches to organizing microfrontend Applications to b
 
 ## Crazy shit - 
 My implementation of rs-build - mf - react - ts does not work, but gemini managed to generate working solution. I have copied it`s approach amending rsbuild files and App.tsx, but it did not help. The only difference now is rsbuild version
+It fixed by usage bootstrap.tsx see - https://github.com/module-federation/core/discussions/1959
